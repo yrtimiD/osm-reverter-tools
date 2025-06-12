@@ -1,0 +1,15 @@
+{
+  "name": "osm-reverter-tools",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dmitry Gurovich <yrtimid@gmail.com>",
+  "license": "The Unlicense",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {},
+  "description": ""
+}
