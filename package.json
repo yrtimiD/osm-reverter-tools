@@ -9,7 +9,8 @@
   "license": "The Unlicense",
   "dependencies": {
     "dotenv": "^16.5.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "yoctocolors": "^2.1.1"
   },
   "description": ""
 }
