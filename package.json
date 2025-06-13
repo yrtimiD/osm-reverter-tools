@@ -8,8 +8,8 @@
   "author": "Dmitry Gurovich <yrtimid@gmail.com>",
   "license": "The Unlicense",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "node-fetch": "^3.3.2"
   },
-  "devDependencies": {},
   "description": ""
 }

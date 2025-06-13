@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 
 async function getChangesets(userId) {
 	let changesets = [];
-	let baseUrl = `http://api.openstreetmap.org/api/0.6/changesets.json?user=${userId}`;
+	let baseUrl = `https://api.openstreetmap.org/api/0.6/changesets.json?user=${userId}`;
 	let url = baseUrl;
 
 	while (true) {

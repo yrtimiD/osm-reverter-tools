@@ -1,0 +1,32 @@
+@clientId = {{$dotenv CLIENT_ID}}
+@clientSecret = {{$dotenv CLIENT_SECRET}}
+
+# @oauthUrl = https://www.openstreetmap.org
+# @baseUrl = https://api.openstreetmap.org
+# @changeset = 114914663
+
+@oauthUrl = https://master.apis.dev.openstreetmap.org
+@baseUrl = https://master.apis.dev.openstreetmap.org
+@changeset = 418117
+
+
+### auth
+GET {{oauthUrl}}/oauth2/authorize?client_id={{clientId}}&redirect_uri=&scope={{}}&response_type=code
+
+
+
+### get permissions
+GET {{baseUrl}}/api/0.6/permissions.json
+
+
+
+
+### Returns the changeset
+GET {{baseUrl}}/api/0.6/changeset/{{changeset}}.json?include_discussion=true
+
+
+
+###
+//GET /api/0.6/changeset/#id?include_discussion=true
+
+//https://api.openstreetmap.org/api/0.6/changeset/#id/comment
