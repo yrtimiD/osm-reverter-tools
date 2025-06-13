@@ -79,9 +79,13 @@ async function runWithFile(fileName, comment) {
 	let fileContent = await fs.readFile(fileName, 'utf-8');
 	let queue = JSON.parse(fileContent);
 	log.info(`Processing ${queue.length} items in the queue...`);
-
+	let total = queue.length;
+	let count = 0;
 	while (queue.length > 0) {
+		count++;
 		let changeset = queue.shift();
+		log.info(`${count}/${total} ${osm.apiUrl}/changeset/${changeset}`);
+
 		await createComment(changeset, comment);
 		await fs.writeFile(fileName, JSON.stringify(queue), 'utf-8');
 		await sleep(requestInterval);
@@ -91,7 +95,6 @@ async function runWithFile(fileName, comment) {
 }
 
 async function createComment(changeset, comment) {
-	log.info(`${osm.apiUrl}/changeset/${changeset}`);
 	let success = false;
 	let errorSleep = defaultErrorSleep;
 
