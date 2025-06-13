@@ -112,7 +112,7 @@ async function createComment(changeset, comment) {
 			errorSleep = defaultErrorSleep;
 		} catch (e) {
 			log.error(`${changeset}: failed to add comment: ${e.message}`);
-			log.info(`Sleeping for ${errorSleep / 1000} sec...`);
+			log.info(`Sleeping for ${Math.floor(errorSleep / 60000)} min ${errorSleep / 1000 % 60} sec...`);
 			await sleep(errorSleep);
 			errorSleep *= 2;
 		}
